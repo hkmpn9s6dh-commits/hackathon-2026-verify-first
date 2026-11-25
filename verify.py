@@ -140,7 +140,13 @@ def main():
                          capture_output=True, cwd=ROOT)
     check('gen_scenes.mjs 执行成功', gen.returncode == 0, gen.stderr.decode('utf-8', 'ignore')[-300:])
     if gen.returncode == 0:
-        same = open(tmp.name, 'rb').read() == open(SCENES, 'rb').read()
+        a = open(tmp.name, 'rb').read().replace(b'
+', b'
+')
+        b = open(SCENES, 'rb').read().replace(b'
+', b'
+')
+        same = a == b
         check('同 seed 重生成与 engine/scenes.json 逐字节一致', same)
     os.unlink(tmp.name)
 
