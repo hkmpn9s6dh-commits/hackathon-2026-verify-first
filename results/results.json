@@ -1,0 +1,2296 @@
+{
+  "summary": {
+    "dataset": "verify-first-synthetic",
+    "seed": 20261125,
+    "engine_version": "1.0.0",
+    "thresholds": {
+      "pass": 0.8,
+      "review": 0.55
+    },
+    "generated_at": "2026-11-25T08:34:54.361Z",
+    "cases_total": 48,
+    "categories": 6,
+    "cases_per_category": 8,
+    "frames_processed": 240,
+    "events_logged": 288,
+    "verdict_accuracy_pct": 100,
+    "correct": 48,
+    "false_allow": 0,
+    "false_block": 0,
+    "review_verdicts": 0,
+    "intercept_cases": 32,
+    "human_review_cases": 8,
+    "recovered_cases": 8,
+    "visual_nodes": 5,
+    "nodes_hit": [
+      "clamp",
+      "nameplate",
+      "probe",
+      "tag",
+      "tester"
+    ],
+    "latency": {
+      "engine_ms_p50": 0.008,
+      "engine_ms_p95": 0.023,
+      "engine_samples": 288,
+      "pipeline_ms_p50_modeled": 398,
+      "pipeline_ms_p95_modeled": 578,
+      "budget_ms": 2000,
+      "modeled": true
+    },
+    "branches": {
+      "designed": [
+        "B0",
+        "B1",
+        "B2",
+        "B3",
+        "B4",
+        "B5",
+        "R1",
+        "R2"
+      ],
+      "hit": [
+        "B1",
+        "B2",
+        "B4",
+        "B5",
+        "R1",
+        "R2"
+      ],
+      "uncovered": [
+        "B0",
+        "B3"
+      ],
+      "codes_hit": [
+        "E-BAY-MISMATCH",
+        "E-GROUND-LOOSE",
+        "E-TAG-MISSING",
+        "E-TESTER-SELFTEST",
+        "H-CONFIRM",
+        "I-PASS",
+        "W-LOW-CONF",
+        "W-RECOVERED"
+      ]
+    }
+  },
+  "per_category": [
+    {
+      "key": "normal",
+      "name": "正常合规",
+      "label": "allow",
+      "cases": 8,
+      "correct": 8,
+      "verdicts": {
+        "allow": 8,
+        "block": 0,
+        "review": 0
+      }
+    },
+    {
+      "key": "tester_fail",
+      "name": "验电器失效（不处置）",
+      "label": "block",
+      "cases": 8,
+      "correct": 8,
+      "verdicts": {
+        "allow": 0,
+        "block": 8,
+        "review": 0
+      }
+    },
+    {
+      "key": "wrong_bay",
+      "name": "走错间隔（不处置）",
+      "label": "block",
+      "cases": 8,
+      "correct": 8,
+      "verdicts": {
+        "allow": 0,
+        "block": 8,
+        "review": 0
+      }
+    },
+    {
+      "key": "no_tag",
+      "name": "未挂牌（不处置）",
+      "label": "block",
+      "cases": 8,
+      "correct": 8,
+      "verdicts": {
+        "allow": 0,
+        "block": 8,
+        "review": 0
+      }
+    },
+    {
+      "key": "ground_loose",
+      "name": "接地不良·处置后放行",
+      "label": "allow",
+      "cases": 8,
+      "correct": 8,
+      "verdicts": {
+        "allow": 8,
+        "block": 0,
+        "review": 0
+      }
+    },
+    {
+      "key": "lowlight",
+      "name": "低光低置信·人工复核放行",
+      "label": "allow",
+      "cases": 8,
+      "correct": 8,
+      "verdicts": {
+        "allow": 8,
+        "block": 0,
+        "review": 0
+      }
+    }
+  ],
+  "cases": [
+    {
+      "case_id": "normal-1",
+      "category": "normal",
+      "label": "allow",
+      "verdict": "allow",
+      "correct": true,
+      "blocked_at_step": null,
+      "block_code": null,
+      "intercept_codes": [],
+      "reviews": [],
+      "nodes_used": [
+        "nameplate",
+        "tester",
+        "probe",
+        "clamp",
+        "tag"
+      ],
+      "frames_processed": 5,
+      "events": 5,
+      "human_confirmed": false,
+      "engine_ms": {
+        "p50": 0.025,
+        "p95": 0.083
+      },
+      "engine_samples_ms": [
+        0.0373,
+        0.0949,
+        0.0482,
+        0.0117,
+        0.0131,
+        0.008
+      ],
+      "pipeline_checks_modeled": [
+        392,
+        392,
+        398,
+        398,
+        392
+      ],
+      "pipeline_ms_modeled_p50": 392,
+      "checks_modeled": 5
+    },
+    {
+      "case_id": "normal-2",
+      "category": "normal",
+      "label": "allow",
+      "verdict": "allow",
+      "correct": true,
+      "blocked_at_step": null,
+      "block_code": null,
+      "intercept_codes": [],
+      "reviews": [],
+      "nodes_used": [
+        "nameplate",
+        "tester",
+        "probe",
+        "clamp",
+        "tag"
+      ],
+      "frames_processed": 5,
+      "events": 5,
+      "human_confirmed": false,
+      "engine_ms": {
+        "p50": 0.01,
+        "p95": 0.449
+      },
+      "engine_samples_ms": [
+        0.0085,
+        0.595,
+        0.0114,
+        0.0089,
+        0.0117,
+        0.0074
+      ],
+      "pipeline_checks_modeled": [
+        392,
+        392,
+        398,
+        398,
+        392
+      ],
+      "pipeline_ms_modeled_p50": 392,
+      "checks_modeled": 5
+    },
+    {
+      "case_id": "normal-3",
+      "category": "normal",
+      "label": "allow",
+      "verdict": "allow",
+      "correct": true,
+      "blocked_at_step": null,
+      "block_code": null,
+      "intercept_codes": [],
+      "reviews": [],
+      "nodes_used": [
+        "nameplate",
+        "tester",
+        "probe",
+        "clamp",
+        "tag"
+      ],
+      "frames_processed": 5,
+      "events": 5,
+      "human_confirmed": false,
+      "engine_ms": {
+        "p50": 0.007,
+        "p95": 0.009
+      },
+      "engine_samples_ms": [
+        0.0071,
+        0.0073,
+        0.0098,
+        0.0073,
+        0.0071,
+        0.0076
+      ],
+      "pipeline_checks_modeled": [
+        392,
+        392,
+        398,
+        398,
+        392
+      ],
+      "pipeline_ms_modeled_p50": 392,
+      "checks_modeled": 5
+    },
+    {
+      "case_id": "normal-4",
+      "category": "normal",
+      "label": "allow",
+      "verdict": "allow",
+      "correct": true,
+      "blocked_at_step": null,
+      "block_code": null,
+      "intercept_codes": [],
+      "reviews": [],
+      "nodes_used": [
+        "nameplate",
+        "tester",
+        "probe",
+        "clamp",
+        "tag"
+      ],
+      "frames_processed": 5,
+      "events": 5,
+      "human_confirmed": false,
+      "engine_ms": {
+        "p50": 0.007,
+        "p95": 0.007
+      },
+      "engine_samples_ms": [
+        0.0075,
+        0.0072,
+        0.0071,
+        0.0074,
+        0.007,
+        0.0073
+      ],
+      "pipeline_checks_modeled": [
+        392,
+        392,
+        398,
+        398,
+        392
+      ],
+      "pipeline_ms_modeled_p50": 392,
+      "checks_modeled": 5
+    },
+    {
+      "case_id": "normal-5",
+      "category": "normal",
+      "label": "allow",
+      "verdict": "allow",
+      "correct": true,
+      "blocked_at_step": null,
+      "block_code": null,
+      "intercept_codes": [],
+      "reviews": [],
+      "nodes_used": [
+        "nameplate",
+        "tester",
+        "probe",
+        "clamp",
+        "tag"
+      ],
+      "frames_processed": 5,
+      "events": 5,
+      "human_confirmed": false,
+      "engine_ms": {
+        "p50": 0.009,
+        "p95": 0.01
+      },
+      "engine_samples_ms": [
+        0.0094,
+        0.0085,
+        0.0093,
+        0.0098,
+        0.0094,
+        0.0082
+      ],
+      "pipeline_checks_modeled": [
+        392,
+        392,
+        398,
+        398,
+        392
+      ],
+      "pipeline_ms_modeled_p50": 392,
+      "checks_modeled": 5
+    },
+    {
+      "case_id": "normal-6",
+      "category": "normal",
+      "label": "allow",
+      "verdict": "allow",
+      "correct": true,
+      "blocked_at_step": null,
+      "block_code": null,
+      "intercept_codes": [],
+      "reviews": [],
+      "nodes_used": [
+        "nameplate",
+        "tester",
+        "probe",
+        "clamp",
+        "tag"
+      ],
+      "frames_processed": 5,
+      "events": 5,
+      "human_confirmed": false,
+      "engine_ms": {
+        "p50": 0.007,
+        "p95": 0.01
+      },
+      "engine_samples_ms": [
+        0.0111,
+        0.0071,
+        0.0072,
+        0.0071,
+        0.007,
+        0.0073
+      ],
+      "pipeline_checks_modeled": [
+        392,
+        392,
+        398,
+        398,
+        392
+      ],
+      "pipeline_ms_modeled_p50": 392,
+      "checks_modeled": 5
+    },
+    {
+      "case_id": "normal-7",
+      "category": "normal",
+      "label": "allow",
+      "verdict": "allow",
+      "correct": true,
+      "blocked_at_step": null,
+      "block_code": null,
+      "intercept_codes": [],
+      "reviews": [],
+      "nodes_used": [
+        "nameplate",
+        "tester",
+        "probe",
+        "clamp",
+        "tag"
+      ],
+      "frames_processed": 5,
+      "events": 5,
+      "human_confirmed": false,
+      "engine_ms": {
+        "p50": 0.007,
+        "p95": 0.383
+      },
+      "engine_samples_ms": [
+        0.0071,
+        0.0072,
+        0.0071,
+        0.0072,
+        0.507,
+        0.0091
+      ],
+      "pipeline_checks_modeled": [
+        392,
+        392,
+        398,
+        398,
+        392
+      ],
+      "pipeline_ms_modeled_p50": 392,
+      "checks_modeled": 5
+    },
+    {
+      "case_id": "normal-8",
+      "category": "normal",
+      "label": "allow",
+      "verdict": "allow",
+      "correct": true,
+      "blocked_at_step": null,
+      "block_code": null,
+      "intercept_codes": [],
+      "reviews": [],
+      "nodes_used": [
+        "nameplate",
+        "tester",
+        "probe",
+        "clamp",
+        "tag"
+      ],
+      "frames_processed": 5,
+      "events": 5,
+      "human_confirmed": false,
+      "engine_ms": {
+        "p50": 0.007,
+        "p95": 0.007
+      },
+      "engine_samples_ms": [
+        0.0068,
+        0.007,
+        0.0067,
+        0.0066,
+        0.0066,
+        0.0065
+      ],
+      "pipeline_checks_modeled": [
+        392,
+        392,
+        398,
+        398,
+        392
+      ],
+      "pipeline_ms_modeled_p50": 392,
+      "checks_modeled": 5
+    },
+    {
+      "case_id": "tester_fail-1",
+      "category": "tester_fail",
+      "label": "block",
+      "verdict": "block",
+      "correct": true,
+      "blocked_at_step": 2,
+      "block_code": "E-TESTER-SELFTEST",
+      "intercept_codes": [
+        "E-TESTER-SELFTEST"
+      ],
+      "reviews": [],
+      "nodes_used": [
+        "nameplate",
+        "tester"
+      ],
+      "frames_processed": 4,
+      "events": 4,
+      "human_confirmed": false,
+      "engine_ms": {
+        "p50": 0.005,
+        "p95": 0.007
+      },
+      "engine_samples_ms": [
+        0.0054,
+        0.0051,
+        0.0074,
+        0.0052,
+        0.005,
+        0.0049
+      ],
+      "pipeline_checks_modeled": [
+        392
+      ],
+      "pipeline_ms_modeled_p50": 392,
+      "checks_modeled": 1
+    },
+    {
+      "case_id": "tester_fail-2",
+      "category": "tester_fail",
+      "label": "block",
+      "verdict": "block",
+      "correct": true,
+      "blocked_at_step": 2,
+      "block_code": "E-TESTER-SELFTEST",
+      "intercept_codes": [
+        "E-TESTER-SELFTEST"
+      ],
+      "reviews": [],
+      "nodes_used": [
+        "nameplate",
+        "tester"
+      ],
+      "frames_processed": 4,
+      "events": 4,
+      "human_confirmed": false,
+      "engine_ms": {
+        "p50": 0.005,
+        "p95": 0.005
+      },
+      "engine_samples_ms": [
+        0.005,
+        0.0049,
+        0.005,
+        0.0056,
+        0.005,
+        0.005
+      ],
+      "pipeline_checks_modeled": [
+        392
+      ],
+      "pipeline_ms_modeled_p50": 392,
+      "checks_modeled": 1
+    },
+    {
+      "case_id": "tester_fail-3",
+      "category": "tester_fail",
+      "label": "block",
+      "verdict": "block",
+      "correct": true,
+      "blocked_at_step": 2,
+      "block_code": "E-TESTER-SELFTEST",
+      "intercept_codes": [
+        "E-TESTER-SELFTEST"
+      ],
+      "reviews": [],
+      "nodes_used": [
+        "nameplate",
+        "tester"
+      ],
+      "frames_processed": 4,
+      "events": 4,
+      "human_confirmed": false,
+      "engine_ms": {
+        "p50": 0.005,
+        "p95": 0.005
+      },
+      "engine_samples_ms": [
+        0.0048,
+        0.0047,
+        0.0049,
+        0.0048,
+        0.0048,
+        0.0049
+      ],
+      "pipeline_checks_modeled": [
+        392
+      ],
+      "pipeline_ms_modeled_p50": 392,
+      "checks_modeled": 1
+    },
+    {
+      "case_id": "tester_fail-4",
+      "category": "tester_fail",
+      "label": "block",
+      "verdict": "block",
+      "correct": true,
+      "blocked_at_step": 2,
+      "block_code": "E-TESTER-SELFTEST",
+      "intercept_codes": [
+        "E-TESTER-SELFTEST"
+      ],
+      "reviews": [],
+      "nodes_used": [
+        "nameplate",
+        "tester"
+      ],
+      "frames_processed": 4,
+      "events": 4,
+      "human_confirmed": false,
+      "engine_ms": {
+        "p50": 0.005,
+        "p95": 0.006
+      },
+      "engine_samples_ms": [
+        0.0058,
+        0.0049,
+        0.0047,
+        0.0047,
+        0.0047,
+        0.0047
+      ],
+      "pipeline_checks_modeled": [
+        392
+      ],
+      "pipeline_ms_modeled_p50": 392,
+      "checks_modeled": 1
+    },
+    {
+      "case_id": "tester_fail-5",
+      "category": "tester_fail",
+      "label": "block",
+      "verdict": "block",
+      "correct": true,
+      "blocked_at_step": 2,
+      "block_code": "E-TESTER-SELFTEST",
+      "intercept_codes": [
+        "E-TESTER-SELFTEST"
+      ],
+      "reviews": [],
+      "nodes_used": [
+        "nameplate",
+        "tester"
+      ],
+      "frames_processed": 4,
+      "events": 4,
+      "human_confirmed": false,
+      "engine_ms": {
+        "p50": 0.005,
+        "p95": 0.005
+      },
+      "engine_samples_ms": [
+        0.0049,
+        0.0048,
+        0.0047,
+        0.0047,
+        0.0047,
+        0.0046
+      ],
+      "pipeline_checks_modeled": [
+        392
+      ],
+      "pipeline_ms_modeled_p50": 392,
+      "checks_modeled": 1
+    },
+    {
+      "case_id": "tester_fail-6",
+      "category": "tester_fail",
+      "label": "block",
+      "verdict": "block",
+      "correct": true,
+      "blocked_at_step": 2,
+      "block_code": "E-TESTER-SELFTEST",
+      "intercept_codes": [
+        "E-TESTER-SELFTEST"
+      ],
+      "reviews": [],
+      "nodes_used": [
+        "nameplate",
+        "tester"
+      ],
+      "frames_processed": 4,
+      "events": 4,
+      "human_confirmed": false,
+      "engine_ms": {
+        "p50": 0.005,
+        "p95": 0.005
+      },
+      "engine_samples_ms": [
+        0.0046,
+        0.0054,
+        0.0047,
+        0.0047,
+        0.0047,
+        0.0048
+      ],
+      "pipeline_checks_modeled": [
+        392
+      ],
+      "pipeline_ms_modeled_p50": 392,
+      "checks_modeled": 1
+    },
+    {
+      "case_id": "tester_fail-7",
+      "category": "tester_fail",
+      "label": "block",
+      "verdict": "block",
+      "correct": true,
+      "blocked_at_step": 2,
+      "block_code": "E-TESTER-SELFTEST",
+      "intercept_codes": [
+        "E-TESTER-SELFTEST"
+      ],
+      "reviews": [],
+      "nodes_used": [
+        "nameplate",
+        "tester"
+      ],
+      "frames_processed": 4,
+      "events": 4,
+      "human_confirmed": false,
+      "engine_ms": {
+        "p50": 0.005,
+        "p95": 0.005
+      },
+      "engine_samples_ms": [
+        0.0048,
+        0.0047,
+        0.0047,
+        0.0047,
+        0.0048,
+        0.0047
+      ],
+      "pipeline_checks_modeled": [
+        392
+      ],
+      "pipeline_ms_modeled_p50": 392,
+      "checks_modeled": 1
+    },
+    {
+      "case_id": "tester_fail-8",
+      "category": "tester_fail",
+      "label": "block",
+      "verdict": "block",
+      "correct": true,
+      "blocked_at_step": 2,
+      "block_code": "E-TESTER-SELFTEST",
+      "intercept_codes": [
+        "E-TESTER-SELFTEST"
+      ],
+      "reviews": [],
+      "nodes_used": [
+        "nameplate",
+        "tester"
+      ],
+      "frames_processed": 4,
+      "events": 4,
+      "human_confirmed": false,
+      "engine_ms": {
+        "p50": 0.005,
+        "p95": 0.005
+      },
+      "engine_samples_ms": [
+        0.0046,
+        0.0047,
+        0.0047,
+        0.0048,
+        0.0047,
+        0.0048
+      ],
+      "pipeline_checks_modeled": [
+        392
+      ],
+      "pipeline_ms_modeled_p50": 392,
+      "checks_modeled": 1
+    },
+    {
+      "case_id": "wrong_bay-1",
+      "category": "wrong_bay",
+      "label": "block",
+      "verdict": "block",
+      "correct": true,
+      "blocked_at_step": 1,
+      "block_code": "E-BAY-MISMATCH",
+      "intercept_codes": [
+        "E-BAY-MISMATCH"
+      ],
+      "reviews": [],
+      "nodes_used": [
+        "nameplate"
+      ],
+      "frames_processed": 2,
+      "events": 2,
+      "human_confirmed": false,
+      "engine_ms": {
+        "p50": 0.003,
+        "p95": 0.003
+      },
+      "engine_samples_ms": [
+        0.0027,
+        0.0027,
+        0.0028,
+        0.0028,
+        0.0028,
+        0.0027
+      ],
+      "pipeline_checks_modeled": [],
+      "pipeline_ms_modeled_p50": 0,
+      "checks_modeled": 0
+    },
+    {
+      "case_id": "wrong_bay-2",
+      "category": "wrong_bay",
+      "label": "block",
+      "verdict": "block",
+      "correct": true,
+      "blocked_at_step": 1,
+      "block_code": "E-BAY-MISMATCH",
+      "intercept_codes": [
+        "E-BAY-MISMATCH"
+      ],
+      "reviews": [],
+      "nodes_used": [
+        "nameplate"
+      ],
+      "frames_processed": 2,
+      "events": 2,
+      "human_confirmed": false,
+      "engine_ms": {
+        "p50": 0.003,
+        "p95": 0.003
+      },
+      "engine_samples_ms": [
+        0.0027,
+        0.0027,
+        0.0027,
+        0.0028,
+        0.0027,
+        0.0031
+      ],
+      "pipeline_checks_modeled": [],
+      "pipeline_ms_modeled_p50": 0,
+      "checks_modeled": 0
+    },
+    {
+      "case_id": "wrong_bay-3",
+      "category": "wrong_bay",
+      "label": "block",
+      "verdict": "block",
+      "correct": true,
+      "blocked_at_step": 1,
+      "block_code": "E-BAY-MISMATCH",
+      "intercept_codes": [
+        "E-BAY-MISMATCH"
+      ],
+      "reviews": [],
+      "nodes_used": [
+        "nameplate"
+      ],
+      "frames_processed": 2,
+      "events": 2,
+      "human_confirmed": false,
+      "engine_ms": {
+        "p50": 0.003,
+        "p95": 0.003
+      },
+      "engine_samples_ms": [
+        0.0027,
+        0.0027,
+        0.0027,
+        0.0028,
+        0.0027,
+        0.0027
+      ],
+      "pipeline_checks_modeled": [],
+      "pipeline_ms_modeled_p50": 0,
+      "checks_modeled": 0
+    },
+    {
+      "case_id": "wrong_bay-4",
+      "category": "wrong_bay",
+      "label": "block",
+      "verdict": "block",
+      "correct": true,
+      "blocked_at_step": 1,
+      "block_code": "E-BAY-MISMATCH",
+      "intercept_codes": [
+        "E-BAY-MISMATCH"
+      ],
+      "reviews": [],
+      "nodes_used": [
+        "nameplate"
+      ],
+      "frames_processed": 2,
+      "events": 2,
+      "human_confirmed": false,
+      "engine_ms": {
+        "p50": 0.003,
+        "p95": 0.004
+      },
+      "engine_samples_ms": [
+        0.0027,
+        0.0049,
+        0.0028,
+        0.0027,
+        0.0027,
+        0.0027
+      ],
+      "pipeline_checks_modeled": [],
+      "pipeline_ms_modeled_p50": 0,
+      "checks_modeled": 0
+    },
+    {
+      "case_id": "wrong_bay-5",
+      "category": "wrong_bay",
+      "label": "block",
+      "verdict": "block",
+      "correct": true,
+      "blocked_at_step": 1,
+      "block_code": "E-BAY-MISMATCH",
+      "intercept_codes": [
+        "E-BAY-MISMATCH"
+      ],
+      "reviews": [],
+      "nodes_used": [
+        "nameplate"
+      ],
+      "frames_processed": 2,
+      "events": 2,
+      "human_confirmed": false,
+      "engine_ms": {
+        "p50": 0.003,
+        "p95": 0.003
+      },
+      "engine_samples_ms": [
+        0.0027,
+        0.0028,
+        0.0027,
+        0.0028,
+        0.0027,
+        0.0027
+      ],
+      "pipeline_checks_modeled": [],
+      "pipeline_ms_modeled_p50": 0,
+      "checks_modeled": 0
+    },
+    {
+      "case_id": "wrong_bay-6",
+      "category": "wrong_bay",
+      "label": "block",
+      "verdict": "block",
+      "correct": true,
+      "blocked_at_step": 1,
+      "block_code": "E-BAY-MISMATCH",
+      "intercept_codes": [
+        "E-BAY-MISMATCH"
+      ],
+      "reviews": [],
+      "nodes_used": [
+        "nameplate"
+      ],
+      "frames_processed": 2,
+      "events": 2,
+      "human_confirmed": false,
+      "engine_ms": {
+        "p50": 0.003,
+        "p95": 0.003
+      },
+      "engine_samples_ms": [
+        0.0028,
+        0.0027,
+        0.0026,
+        0.0027,
+        0.0027,
+        0.0026
+      ],
+      "pipeline_checks_modeled": [],
+      "pipeline_ms_modeled_p50": 0,
+      "checks_modeled": 0
+    },
+    {
+      "case_id": "wrong_bay-7",
+      "category": "wrong_bay",
+      "label": "block",
+      "verdict": "block",
+      "correct": true,
+      "blocked_at_step": 1,
+      "block_code": "E-BAY-MISMATCH",
+      "intercept_codes": [
+        "E-BAY-MISMATCH"
+      ],
+      "reviews": [],
+      "nodes_used": [
+        "nameplate"
+      ],
+      "frames_processed": 2,
+      "events": 2,
+      "human_confirmed": false,
+      "engine_ms": {
+        "p50": 0.003,
+        "p95": 0.003
+      },
+      "engine_samples_ms": [
+        0.0027,
+        0.0026,
+        0.0027,
+        0.0027,
+        0.0028,
+        0.0027
+      ],
+      "pipeline_checks_modeled": [],
+      "pipeline_ms_modeled_p50": 0,
+      "checks_modeled": 0
+    },
+    {
+      "case_id": "wrong_bay-8",
+      "category": "wrong_bay",
+      "label": "block",
+      "verdict": "block",
+      "correct": true,
+      "blocked_at_step": 1,
+      "block_code": "E-BAY-MISMATCH",
+      "intercept_codes": [
+        "E-BAY-MISMATCH"
+      ],
+      "reviews": [],
+      "nodes_used": [
+        "nameplate"
+      ],
+      "frames_processed": 2,
+      "events": 2,
+      "human_confirmed": false,
+      "engine_ms": {
+        "p50": 0.003,
+        "p95": 0.123
+      },
+      "engine_samples_ms": [
+        0.0027,
+        0.0027,
+        0.0027,
+        0.0028,
+        0.1619,
+        0.0048
+      ],
+      "pipeline_checks_modeled": [],
+      "pipeline_ms_modeled_p50": 0,
+      "checks_modeled": 0
+    },
+    {
+      "case_id": "no_tag-1",
+      "category": "no_tag",
+      "label": "block",
+      "verdict": "block",
+      "correct": true,
+      "blocked_at_step": 5,
+      "block_code": "E-TAG-MISSING",
+      "intercept_codes": [
+        "E-TAG-MISSING"
+      ],
+      "reviews": [],
+      "nodes_used": [
+        "nameplate",
+        "tester",
+        "probe",
+        "clamp",
+        "tag"
+      ],
+      "frames_processed": 7,
+      "events": 7,
+      "human_confirmed": false,
+      "engine_ms": {
+        "p50": 0.008,
+        "p95": 0.008
+      },
+      "engine_samples_ms": [
+        0.0081,
+        0.0081,
+        0.0079,
+        0.0081,
+        0.0079,
+        0.008
+      ],
+      "pipeline_checks_modeled": [
+        392,
+        392,
+        398,
+        398
+      ],
+      "pipeline_ms_modeled_p50": 395,
+      "checks_modeled": 4
+    },
+    {
+      "case_id": "no_tag-2",
+      "category": "no_tag",
+      "label": "block",
+      "verdict": "block",
+      "correct": true,
+      "blocked_at_step": 5,
+      "block_code": "E-TAG-MISSING",
+      "intercept_codes": [
+        "E-TAG-MISSING"
+      ],
+      "reviews": [],
+      "nodes_used": [
+        "nameplate",
+        "tester",
+        "probe",
+        "clamp",
+        "tag"
+      ],
+      "frames_processed": 7,
+      "events": 7,
+      "human_confirmed": false,
+      "engine_ms": {
+        "p50": 0.008,
+        "p95": 0.008
+      },
+      "engine_samples_ms": [
+        0.0081,
+        0.008,
+        0.0079,
+        0.0079,
+        0.0079,
+        0.0081
+      ],
+      "pipeline_checks_modeled": [
+        392,
+        392,
+        398,
+        398
+      ],
+      "pipeline_ms_modeled_p50": 395,
+      "checks_modeled": 4
+    },
+    {
+      "case_id": "no_tag-3",
+      "category": "no_tag",
+      "label": "block",
+      "verdict": "block",
+      "correct": true,
+      "blocked_at_step": 5,
+      "block_code": "E-TAG-MISSING",
+      "intercept_codes": [
+        "E-TAG-MISSING"
+      ],
+      "reviews": [],
+      "nodes_used": [
+        "nameplate",
+        "tester",
+        "probe",
+        "clamp",
+        "tag"
+      ],
+      "frames_processed": 7,
+      "events": 7,
+      "human_confirmed": false,
+      "engine_ms": {
+        "p50": 0.008,
+        "p95": 0.008
+      },
+      "engine_samples_ms": [
+        0.008,
+        0.008,
+        0.0079,
+        0.0079,
+        0.008,
+        0.0079
+      ],
+      "pipeline_checks_modeled": [
+        392,
+        392,
+        398,
+        398
+      ],
+      "pipeline_ms_modeled_p50": 395,
+      "checks_modeled": 4
+    },
+    {
+      "case_id": "no_tag-4",
+      "category": "no_tag",
+      "label": "block",
+      "verdict": "block",
+      "correct": true,
+      "blocked_at_step": 5,
+      "block_code": "E-TAG-MISSING",
+      "intercept_codes": [
+        "E-TAG-MISSING"
+      ],
+      "reviews": [],
+      "nodes_used": [
+        "nameplate",
+        "tester",
+        "probe",
+        "clamp",
+        "tag"
+      ],
+      "frames_processed": 7,
+      "events": 7,
+      "human_confirmed": false,
+      "engine_ms": {
+        "p50": 0.008,
+        "p95": 0.008
+      },
+      "engine_samples_ms": [
+        0.0079,
+        0.0079,
+        0.008,
+        0.008,
+        0.008,
+        0.008
+      ],
+      "pipeline_checks_modeled": [
+        392,
+        392,
+        398,
+        398
+      ],
+      "pipeline_ms_modeled_p50": 395,
+      "checks_modeled": 4
+    },
+    {
+      "case_id": "no_tag-5",
+      "category": "no_tag",
+      "label": "block",
+      "verdict": "block",
+      "correct": true,
+      "blocked_at_step": 5,
+      "block_code": "E-TAG-MISSING",
+      "intercept_codes": [
+        "E-TAG-MISSING"
+      ],
+      "reviews": [],
+      "nodes_used": [
+        "nameplate",
+        "tester",
+        "probe",
+        "clamp",
+        "tag"
+      ],
+      "frames_processed": 7,
+      "events": 7,
+      "human_confirmed": false,
+      "engine_ms": {
+        "p50": 0.008,
+        "p95": 0.01
+      },
+      "engine_samples_ms": [
+        0.0082,
+        0.008,
+        0.0105,
+        0.0084,
+        0.0081,
+        0.008
+      ],
+      "pipeline_checks_modeled": [
+        392,
+        392,
+        398,
+        398
+      ],
+      "pipeline_ms_modeled_p50": 395,
+      "checks_modeled": 4
+    },
+    {
+      "case_id": "no_tag-6",
+      "category": "no_tag",
+      "label": "block",
+      "verdict": "block",
+      "correct": true,
+      "blocked_at_step": 5,
+      "block_code": "E-TAG-MISSING",
+      "intercept_codes": [
+        "E-TAG-MISSING"
+      ],
+      "reviews": [],
+      "nodes_used": [
+        "nameplate",
+        "tester",
+        "probe",
+        "clamp",
+        "tag"
+      ],
+      "frames_processed": 7,
+      "events": 7,
+      "human_confirmed": false,
+      "engine_ms": {
+        "p50": 0.008,
+        "p95": 0.055
+      },
+      "engine_samples_ms": [
+        0.008,
+        0.0081,
+        0.008,
+        0.0079,
+        0.0081,
+        0.0701
+      ],
+      "pipeline_checks_modeled": [
+        392,
+        392,
+        398,
+        398
+      ],
+      "pipeline_ms_modeled_p50": 395,
+      "checks_modeled": 4
+    },
+    {
+      "case_id": "no_tag-7",
+      "category": "no_tag",
+      "label": "block",
+      "verdict": "block",
+      "correct": true,
+      "blocked_at_step": 5,
+      "block_code": "E-TAG-MISSING",
+      "intercept_codes": [
+        "E-TAG-MISSING"
+      ],
+      "reviews": [],
+      "nodes_used": [
+        "nameplate",
+        "tester",
+        "probe",
+        "clamp",
+        "tag"
+      ],
+      "frames_processed": 7,
+      "events": 7,
+      "human_confirmed": false,
+      "engine_ms": {
+        "p50": 0.008,
+        "p95": 0.014
+      },
+      "engine_samples_ms": [
+        0.0081,
+        0.0162,
+        0.0081,
+        0.008,
+        0.008,
+        0.0081
+      ],
+      "pipeline_checks_modeled": [
+        392,
+        392,
+        398,
+        398
+      ],
+      "pipeline_ms_modeled_p50": 395,
+      "checks_modeled": 4
+    },
+    {
+      "case_id": "no_tag-8",
+      "category": "no_tag",
+      "label": "block",
+      "verdict": "block",
+      "correct": true,
+      "blocked_at_step": 5,
+      "block_code": "E-TAG-MISSING",
+      "intercept_codes": [
+        "E-TAG-MISSING"
+      ],
+      "reviews": [],
+      "nodes_used": [
+        "nameplate",
+        "tester",
+        "probe",
+        "clamp",
+        "tag"
+      ],
+      "frames_processed": 7,
+      "events": 7,
+      "human_confirmed": false,
+      "engine_ms": {
+        "p50": 0.008,
+        "p95": 0.008
+      },
+      "engine_samples_ms": [
+        0.0079,
+        0.0081,
+        0.008,
+        0.0079,
+        0.0079,
+        0.0082
+      ],
+      "pipeline_checks_modeled": [
+        392,
+        392,
+        398,
+        398
+      ],
+      "pipeline_ms_modeled_p50": 395,
+      "checks_modeled": 4
+    },
+    {
+      "case_id": "ground_loose-1",
+      "category": "ground_loose",
+      "label": "allow",
+      "verdict": "allow",
+      "correct": true,
+      "blocked_at_step": null,
+      "block_code": null,
+      "intercept_codes": [
+        "E-GROUND-LOOSE"
+      ],
+      "reviews": [],
+      "nodes_used": [
+        "nameplate",
+        "tester",
+        "probe",
+        "clamp",
+        "tag"
+      ],
+      "frames_processed": 7,
+      "events": 8,
+      "human_confirmed": false,
+      "engine_ms": {
+        "p50": 0.011,
+        "p95": 0.046
+      },
+      "engine_samples_ms": [
+        0.0562,
+        0.0131,
+        0.0159,
+        0.0096,
+        0.0093,
+        0.0096
+      ],
+      "pipeline_checks_modeled": [
+        392,
+        392,
+        398,
+        398,
+        392
+      ],
+      "pipeline_ms_modeled_p50": 392,
+      "checks_modeled": 5
+    },
+    {
+      "case_id": "ground_loose-2",
+      "category": "ground_loose",
+      "label": "allow",
+      "verdict": "allow",
+      "correct": true,
+      "blocked_at_step": null,
+      "block_code": null,
+      "intercept_codes": [
+        "E-GROUND-LOOSE"
+      ],
+      "reviews": [],
+      "nodes_used": [
+        "nameplate",
+        "tester",
+        "probe",
+        "clamp",
+        "tag"
+      ],
+      "frames_processed": 7,
+      "events": 8,
+      "human_confirmed": false,
+      "engine_ms": {
+        "p50": 0.022,
+        "p95": 0.136
+      },
+      "engine_samples_ms": [
+        0.0109,
+        0.0173,
+        0.1257,
+        0.1391,
+        0.0243,
+        0.0196
+      ],
+      "pipeline_checks_modeled": [
+        392,
+        392,
+        398,
+        398,
+        392
+      ],
+      "pipeline_ms_modeled_p50": 392,
+      "checks_modeled": 5
+    },
+    {
+      "case_id": "ground_loose-3",
+      "category": "ground_loose",
+      "label": "allow",
+      "verdict": "allow",
+      "correct": true,
+      "blocked_at_step": null,
+      "block_code": null,
+      "intercept_codes": [
+        "E-GROUND-LOOSE"
+      ],
+      "reviews": [],
+      "nodes_used": [
+        "nameplate",
+        "tester",
+        "probe",
+        "clamp",
+        "tag"
+      ],
+      "frames_processed": 7,
+      "events": 8,
+      "human_confirmed": false,
+      "engine_ms": {
+        "p50": 0.014,
+        "p95": 0.018
+      },
+      "engine_samples_ms": [
+        0.0148,
+        0.0187,
+        0.0157,
+        0.0131,
+        0.0097,
+        0.0098
+      ],
+      "pipeline_checks_modeled": [
+        392,
+        392,
+        398,
+        398,
+        392
+      ],
+      "pipeline_ms_modeled_p50": 392,
+      "checks_modeled": 5
+    },
+    {
+      "case_id": "ground_loose-4",
+      "category": "ground_loose",
+      "label": "allow",
+      "verdict": "allow",
+      "correct": true,
+      "blocked_at_step": null,
+      "block_code": null,
+      "intercept_codes": [
+        "E-GROUND-LOOSE"
+      ],
+      "reviews": [],
+      "nodes_used": [
+        "nameplate",
+        "tester",
+        "probe",
+        "clamp",
+        "tag"
+      ],
+      "frames_processed": 7,
+      "events": 8,
+      "human_confirmed": false,
+      "engine_ms": {
+        "p50": 0.018,
+        "p95": 0.029
+      },
+      "engine_samples_ms": [
+        0.0168,
+        0.0307,
+        0.0234,
+        0.0171,
+        0.0185,
+        0.0173
+      ],
+      "pipeline_checks_modeled": [
+        392,
+        392,
+        398,
+        398,
+        392
+      ],
+      "pipeline_ms_modeled_p50": 392,
+      "checks_modeled": 5
+    },
+    {
+      "case_id": "ground_loose-5",
+      "category": "ground_loose",
+      "label": "allow",
+      "verdict": "allow",
+      "correct": true,
+      "blocked_at_step": null,
+      "block_code": null,
+      "intercept_codes": [
+        "E-GROUND-LOOSE"
+      ],
+      "reviews": [],
+      "nodes_used": [
+        "nameplate",
+        "tester",
+        "probe",
+        "clamp",
+        "tag"
+      ],
+      "frames_processed": 7,
+      "events": 8,
+      "human_confirmed": false,
+      "engine_ms": {
+        "p50": 0.012,
+        "p95": 0.017
+      },
+      "engine_samples_ms": [
+        0.0106,
+        0.0167,
+        0.0142,
+        0.0176,
+        0.0105,
+        0.0101
+      ],
+      "pipeline_checks_modeled": [
+        392,
+        392,
+        398,
+        398,
+        392
+      ],
+      "pipeline_ms_modeled_p50": 392,
+      "checks_modeled": 5
+    },
+    {
+      "case_id": "ground_loose-6",
+      "category": "ground_loose",
+      "label": "allow",
+      "verdict": "allow",
+      "correct": true,
+      "blocked_at_step": null,
+      "block_code": null,
+      "intercept_codes": [
+        "E-GROUND-LOOSE"
+      ],
+      "reviews": [],
+      "nodes_used": [
+        "nameplate",
+        "tester",
+        "probe",
+        "clamp",
+        "tag"
+      ],
+      "frames_processed": 7,
+      "events": 8,
+      "human_confirmed": false,
+      "engine_ms": {
+        "p50": 0.01,
+        "p95": 0.014
+      },
+      "engine_samples_ms": [
+        0.0101,
+        0.0099,
+        0.0101,
+        0.0098,
+        0.0139,
+        0.0124
+      ],
+      "pipeline_checks_modeled": [
+        392,
+        392,
+        398,
+        398,
+        392
+      ],
+      "pipeline_ms_modeled_p50": 392,
+      "checks_modeled": 5
+    },
+    {
+      "case_id": "ground_loose-7",
+      "category": "ground_loose",
+      "label": "allow",
+      "verdict": "allow",
+      "correct": true,
+      "blocked_at_step": null,
+      "block_code": null,
+      "intercept_codes": [
+        "E-GROUND-LOOSE"
+      ],
+      "reviews": [],
+      "nodes_used": [
+        "nameplate",
+        "tester",
+        "probe",
+        "clamp",
+        "tag"
+      ],
+      "frames_processed": 7,
+      "events": 8,
+      "human_confirmed": false,
+      "engine_ms": {
+        "p50": 0.01,
+        "p95": 0.018
+      },
+      "engine_samples_ms": [
+        0.0127,
+        0.0101,
+        0.0103,
+        0.0101,
+        0.0098,
+        0.0191
+      ],
+      "pipeline_checks_modeled": [
+        392,
+        392,
+        398,
+        398,
+        392
+      ],
+      "pipeline_ms_modeled_p50": 392,
+      "checks_modeled": 5
+    },
+    {
+      "case_id": "ground_loose-8",
+      "category": "ground_loose",
+      "label": "allow",
+      "verdict": "allow",
+      "correct": true,
+      "blocked_at_step": null,
+      "block_code": null,
+      "intercept_codes": [
+        "E-GROUND-LOOSE"
+      ],
+      "reviews": [],
+      "nodes_used": [
+        "nameplate",
+        "tester",
+        "probe",
+        "clamp",
+        "tag"
+      ],
+      "frames_processed": 7,
+      "events": 8,
+      "human_confirmed": false,
+      "engine_ms": {
+        "p50": 0.011,
+        "p95": 0.021
+      },
+      "engine_samples_ms": [
+        0.0142,
+        0.0233,
+        0.0105,
+        0.0101,
+        0.0108,
+        0.0108
+      ],
+      "pipeline_checks_modeled": [
+        392,
+        392,
+        398,
+        398,
+        392
+      ],
+      "pipeline_ms_modeled_p50": 392,
+      "checks_modeled": 5
+    },
+    {
+      "case_id": "lowlight-1",
+      "category": "lowlight",
+      "label": "allow",
+      "verdict": "allow",
+      "correct": true,
+      "blocked_at_step": null,
+      "block_code": null,
+      "intercept_codes": [],
+      "reviews": [
+        {
+          "step": 1,
+          "code": "W-LOW-CONF",
+          "conf": 0.685
+        },
+        {
+          "step": 2,
+          "code": "W-LOW-CONF",
+          "conf": 0.652
+        },
+        {
+          "step": 3,
+          "code": "W-LOW-CONF",
+          "conf": 0.634
+        },
+        {
+          "step": 4,
+          "code": "W-LOW-CONF",
+          "conf": 0.628
+        },
+        {
+          "step": 5,
+          "code": "W-LOW-CONF",
+          "conf": 0.661
+        }
+      ],
+      "nodes_used": [
+        "nameplate",
+        "tester",
+        "probe",
+        "clamp",
+        "tag"
+      ],
+      "frames_processed": 5,
+      "events": 10,
+      "human_confirmed": true,
+      "engine_ms": {
+        "p50": 0.013,
+        "p95": 0.018
+      },
+      "engine_samples_ms": [
+        0.0148,
+        0.0186,
+        0.0133,
+        0.0128,
+        0.0125,
+        0.0119
+      ],
+      "pipeline_checks_modeled": [
+        572,
+        572,
+        578,
+        578,
+        572
+      ],
+      "pipeline_ms_modeled_p50": 572,
+      "checks_modeled": 5
+    },
+    {
+      "case_id": "lowlight-2",
+      "category": "lowlight",
+      "label": "allow",
+      "verdict": "allow",
+      "correct": true,
+      "blocked_at_step": null,
+      "block_code": null,
+      "intercept_codes": [],
+      "reviews": [
+        {
+          "step": 1,
+          "code": "W-LOW-CONF",
+          "conf": 0.636
+        },
+        {
+          "step": 2,
+          "code": "W-LOW-CONF",
+          "conf": 0.667
+        },
+        {
+          "step": 3,
+          "code": "W-LOW-CONF",
+          "conf": 0.642
+        },
+        {
+          "step": 4,
+          "code": "W-LOW-CONF",
+          "conf": 0.648
+        },
+        {
+          "step": 5,
+          "code": "W-LOW-CONF",
+          "conf": 0.657
+        }
+      ],
+      "nodes_used": [
+        "nameplate",
+        "tester",
+        "probe",
+        "clamp",
+        "tag"
+      ],
+      "frames_processed": 5,
+      "events": 10,
+      "human_confirmed": true,
+      "engine_ms": {
+        "p50": 0.012,
+        "p95": 0.016
+      },
+      "engine_samples_ms": [
+        0.0125,
+        0.012,
+        0.017,
+        0.012,
+        0.0126,
+        0.0116
+      ],
+      "pipeline_checks_modeled": [
+        572,
+        572,
+        578,
+        578,
+        572
+      ],
+      "pipeline_ms_modeled_p50": 572,
+      "checks_modeled": 5
+    },
+    {
+      "case_id": "lowlight-3",
+      "category": "lowlight",
+      "label": "allow",
+      "verdict": "allow",
+      "correct": true,
+      "blocked_at_step": null,
+      "block_code": null,
+      "intercept_codes": [],
+      "reviews": [
+        {
+          "step": 1,
+          "code": "W-LOW-CONF",
+          "conf": 0.675
+        },
+        {
+          "step": 2,
+          "code": "W-LOW-CONF",
+          "conf": 0.681
+        },
+        {
+          "step": 3,
+          "code": "W-LOW-CONF",
+          "conf": 0.661
+        },
+        {
+          "step": 4,
+          "code": "W-LOW-CONF",
+          "conf": 0.648
+        },
+        {
+          "step": 5,
+          "code": "W-LOW-CONF",
+          "conf": 0.636
+        }
+      ],
+      "nodes_used": [
+        "nameplate",
+        "tester",
+        "probe",
+        "clamp",
+        "tag"
+      ],
+      "frames_processed": 5,
+      "events": 10,
+      "human_confirmed": true,
+      "engine_ms": {
+        "p50": 0.021,
+        "p95": 0.022
+      },
+      "engine_samples_ms": [
+        0.0212,
+        0.0206,
+        0.0217,
+        0.0222,
+        0.0204,
+        0.021
+      ],
+      "pipeline_checks_modeled": [
+        572,
+        572,
+        578,
+        578,
+        572
+      ],
+      "pipeline_ms_modeled_p50": 572,
+      "checks_modeled": 5
+    },
+    {
+      "case_id": "lowlight-4",
+      "category": "lowlight",
+      "label": "allow",
+      "verdict": "allow",
+      "correct": true,
+      "blocked_at_step": null,
+      "block_code": null,
+      "intercept_codes": [],
+      "reviews": [
+        {
+          "step": 1,
+          "code": "W-LOW-CONF",
+          "conf": 0.643
+        },
+        {
+          "step": 2,
+          "code": "W-LOW-CONF",
+          "conf": 0.654
+        },
+        {
+          "step": 3,
+          "code": "W-LOW-CONF",
+          "conf": 0.647
+        },
+        {
+          "step": 4,
+          "code": "W-LOW-CONF",
+          "conf": 0.647
+        },
+        {
+          "step": 5,
+          "code": "W-LOW-CONF",
+          "conf": 0.654
+        }
+      ],
+      "nodes_used": [
+        "nameplate",
+        "tester",
+        "probe",
+        "clamp",
+        "tag"
+      ],
+      "frames_processed": 5,
+      "events": 10,
+      "human_confirmed": true,
+      "engine_ms": {
+        "p50": 0.019,
+        "p95": 0.023
+      },
+      "engine_samples_ms": [
+        0.0225,
+        0.0228,
+        0.0183,
+        0.0172,
+        0.0198,
+        0.0188
+      ],
+      "pipeline_checks_modeled": [
+        572,
+        572,
+        578,
+        578,
+        572
+      ],
+      "pipeline_ms_modeled_p50": 572,
+      "checks_modeled": 5
+    },
+    {
+      "case_id": "lowlight-5",
+      "category": "lowlight",
+      "label": "allow",
+      "verdict": "allow",
+      "correct": true,
+      "blocked_at_step": null,
+      "block_code": null,
+      "intercept_codes": [],
+      "reviews": [
+        {
+          "step": 1,
+          "code": "W-LOW-CONF",
+          "conf": 0.656
+        },
+        {
+          "step": 2,
+          "code": "W-LOW-CONF",
+          "conf": 0.634
+        },
+        {
+          "step": 3,
+          "code": "W-LOW-CONF",
+          "conf": 0.648
+        },
+        {
+          "step": 4,
+          "code": "W-LOW-CONF",
+          "conf": 0.675
+        },
+        {
+          "step": 5,
+          "code": "W-LOW-CONF",
+          "conf": 0.654
+        }
+      ],
+      "nodes_used": [
+        "nameplate",
+        "tester",
+        "probe",
+        "clamp",
+        "tag"
+      ],
+      "frames_processed": 5,
+      "events": 10,
+      "human_confirmed": true,
+      "engine_ms": {
+        "p50": 0.016,
+        "p95": 0.041
+      },
+      "engine_samples_ms": [
+        0.0203,
+        0.0188,
+        0.0481,
+        0.0141,
+        0.0114,
+        0.0111
+      ],
+      "pipeline_checks_modeled": [
+        572,
+        572,
+        578,
+        578,
+        572
+      ],
+      "pipeline_ms_modeled_p50": 572,
+      "checks_modeled": 5
+    },
+    {
+      "case_id": "lowlight-6",
+      "category": "lowlight",
+      "label": "allow",
+      "verdict": "allow",
+      "correct": true,
+      "blocked_at_step": null,
+      "block_code": null,
+      "intercept_codes": [],
+      "reviews": [
+        {
+          "step": 1,
+          "code": "W-LOW-CONF",
+          "conf": 0.66
+        },
+        {
+          "step": 2,
+          "code": "W-LOW-CONF",
+          "conf": 0.642
+        },
+        {
+          "step": 3,
+          "code": "W-LOW-CONF",
+          "conf": 0.659
+        },
+        {
+          "step": 4,
+          "code": "W-LOW-CONF",
+          "conf": 0.635
+        },
+        {
+          "step": 5,
+          "code": "W-LOW-CONF",
+          "conf": 0.651
+        }
+      ],
+      "nodes_used": [
+        "nameplate",
+        "tester",
+        "probe",
+        "clamp",
+        "tag"
+      ],
+      "frames_processed": 5,
+      "events": 10,
+      "human_confirmed": true,
+      "engine_ms": {
+        "p50": 0.011,
+        "p95": 0.036
+      },
+      "engine_samples_ms": [
+        0.0113,
+        0.0111,
+        0.013,
+        0.0111,
+        0.0112,
+        0.0432
+      ],
+      "pipeline_checks_modeled": [
+        572,
+        572,
+        578,
+        578,
+        572
+      ],
+      "pipeline_ms_modeled_p50": 572,
+      "checks_modeled": 5
+    },
+    {
+      "case_id": "lowlight-7",
+      "category": "lowlight",
+      "label": "allow",
+      "verdict": "allow",
+      "correct": true,
+      "blocked_at_step": null,
+      "block_code": null,
+      "intercept_codes": [],
+      "reviews": [
+        {
+          "step": 1,
+          "code": "W-LOW-CONF",
+          "conf": 0.645
+        },
+        {
+          "step": 2,
+          "code": "W-LOW-CONF",
+          "conf": 0.637
+        },
+        {
+          "step": 3,
+          "code": "W-LOW-CONF",
+          "conf": 0.66
+        },
+        {
+          "step": 4,
+          "code": "W-LOW-CONF",
+          "conf": 0.646
+        },
+        {
+          "step": 5,
+          "code": "W-LOW-CONF",
+          "conf": 0.662
+        }
+      ],
+      "nodes_used": [
+        "nameplate",
+        "tester",
+        "probe",
+        "clamp",
+        "tag"
+      ],
+      "frames_processed": 5,
+      "events": 10,
+      "human_confirmed": true,
+      "engine_ms": {
+        "p50": 0.011,
+        "p95": 0.012
+      },
+      "engine_samples_ms": [
+        0.0116,
+        0.0109,
+        0.0111,
+        0.0109,
+        0.0109,
+        0.0123
+      ],
+      "pipeline_checks_modeled": [
+        572,
+        572,
+        578,
+        578,
+        572
+      ],
+      "pipeline_ms_modeled_p50": 572,
+      "checks_modeled": 5
+    },
+    {
+      "case_id": "lowlight-8",
+      "category": "lowlight",
+      "label": "allow",
+      "verdict": "allow",
+      "correct": true,
+      "blocked_at_step": null,
+      "block_code": null,
+      "intercept_codes": [],
+      "reviews": [
+        {
+          "step": 1,
+          "code": "W-LOW-CONF",
+          "conf": 0.67
+        },
+        {
+          "step": 2,
+          "code": "W-LOW-CONF",
+          "conf": 0.661
+        },
+        {
+          "step": 3,
+          "code": "W-LOW-CONF",
+          "conf": 0.642
+        },
+        {
+          "step": 4,
+          "code": "W-LOW-CONF",
+          "conf": 0.657
+        },
+        {
+          "step": 5,
+          "code": "W-LOW-CONF",
+          "conf": 0.661
+        }
+      ],
+      "nodes_used": [
+        "nameplate",
+        "tester",
+        "probe",
+        "clamp",
+        "tag"
+      ],
+      "frames_processed": 5,
+      "events": 10,
+      "human_confirmed": true,
+      "engine_ms": {
+        "p50": 0.011,
+        "p95": 0.012
+      },
+      "engine_samples_ms": [
+        0.0111,
+        0.0109,
+        0.0119,
+        0.0112,
+        0.0109,
+        0.0109
+      ],
+      "pipeline_checks_modeled": [
+        572,
+        572,
+        578,
+        578,
+        572
+      ],
+      "pipeline_ms_modeled_p50": 572,
+      "checks_modeled": 5
+    }
+  ]
+}

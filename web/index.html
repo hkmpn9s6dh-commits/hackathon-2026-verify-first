@@ -1,0 +1,117 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>先验电 Verify First · 作业核对原型</title>
+<link rel="stylesheet" href="./style.css" />
+</head>
+<body>
+<div class="app">
+  <header class="topbar">
+    <div class="brand">
+      <span class="mark" aria-hidden="true">
+        <svg viewBox="0 0 32 32" width="28" height="28"><path d="M16 3 4 8v8c0 7 5 11.4 12 13 7-1.6 12-6 12-13V8L16 3Z" fill="none" stroke="currentColor" stroke-width="1.6"/><path d="m9.5 15.6 4.4 4.4 8.4-8.6" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+      </span>
+      <div>
+        <h1>先验电 <span>Verify First</span></h1>
+        <p>停电检修 · 五步核对 · 全程留痕</p>
+      </div>
+    </div>
+
+    <div class="taskbar">
+      <label for="scene">作业场景</label>
+      <select id="scene" aria-label="选择合成场景"></select>
+      <button id="run" class="primary">开始作业</button>
+      <button id="reset" class="ghost">重置</button>
+    </div>
+
+    <div class="devices">
+      <span class="pill live"><i></i>Rokid Glass 3 · 模拟流</span>
+      <span class="pill">端侧 NPU</span>
+      <span class="pill" id="clock">--:--:--</span>
+    </div>
+  </header>
+
+  <main class="grid">
+    <section class="stage" aria-label="第一视角">
+      <div class="viewport" id="viewport">
+        <div class="hud tl"></div><div class="hud tr"></div><div class="hud bl"></div><div class="hud br"></div>
+        <div class="vp-meta"><span class="rec">● REC</span><span id="frameMeta">1280×720 · 30fps</span></div>
+        <div class="vp-task" id="taskChip">等待开始</div>
+        <div class="svg-wrap">
+          <div id="sceneSvg"></div>
+          <div class="overlay" id="overlay"></div>
+        </div>
+        <div class="reticle" aria-hidden="true"></div>
+        <div class="hint" id="hint">选择场景后点「开始作业」</div>
+      </div>
+      <div class="under-stage">
+        <div class="stepstrip" id="stepstrip"></div>
+      </div>
+    </section>
+
+    <aside class="side">
+      <div class="card verdict" id="verdictCard">
+        <div class="v-head">
+          <span class="v-label">当前判定</span>
+          <span class="chip" id="stepChip">第 1 / 5 步</span>
+        </div>
+        <p class="v-main" id="verdictMain">待开始</p>
+        <p class="v-sub" id="verdictSub">引擎将逐帧核对关键视觉节点</p>
+        <dl class="v-stats">
+          <div><dt>置信度</dt><dd id="confVal">—</dd></div>
+          <div><dt>节点</dt><dd id="nodeVal">—</dd></div>
+          <div><dt>已留痕</dt><dd id="logVal">0 条</dd></div>
+        </dl>
+      </div>
+
+      <div class="card action" id="actionCard" hidden>
+        <p class="a-kicker" id="actionKicker">异常处置</p>
+        <h3 id="actionTitle"></h3>
+        <p class="a-body" id="actionBody"></p>
+        <div class="a-buttons" id="actionButtons"></div>
+      </div>
+
+      <div class="card steps">
+        <h3>作业步骤</h3>
+        <ol id="steps"></ol>
+      </div>
+
+      <div class="card logcard">
+        <div class="log-head">
+          <h3>事件留痕</h3>
+          <button id="export" class="mini" disabled>导出本次报告</button>
+        </div>
+        <div class="log-wrap">
+          <table id="log">
+            <thead><tr><th>#</th><th>t/s</th><th>步</th><th>节点</th><th>置信</th><th>结论</th></tr></thead>
+            <tbody></tbody>
+          </table>
+        </div>
+      </div>
+    </aside>
+  </main>
+
+  <footer class="foot">
+    <span>合成场景集 · 由 <code>engine/engine.js</code> 逐帧判定 · 原型与离线评测共用同一实现</span>
+    <span id="engineMeta">engine 1.0.0 · pass ≥ 0.80 · review ≥ 0.55</span>
+  </footer>
+</div>
+
+<div class="modal" id="reportModal" hidden>
+  <div class="sheet">
+    <div class="sheet-head">
+      <h2>作业核对报告</h2>
+      <div>
+        <button id="printReport" class="mini">打印 / 存为 PDF</button>
+        <button id="closeReport" class="mini ghost">关闭</button>
+      </div>
+    </div>
+    <div id="reportBody"></div>
+  </div>
+</div>
+
+<script type="module" src="./app.js"></script>
+</body>
+</html>
