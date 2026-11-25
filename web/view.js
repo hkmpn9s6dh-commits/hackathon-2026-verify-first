@@ -192,7 +192,7 @@ export function applyFrameVisuals(root, frame, step) {
   const tag = find('tag');
   if (tagPlate && tag) {
     const onHandle = tag.attrs && tag.attrs.on_handle === true;
-    tagPlate.setAttribute('transform', onHandle ? 'rotate(0)' : 'translate(-30,320) rotate(72 42 53)');
+    tagPlate.setAttribute('transform', onHandle ? 'rotate(0)' : 'translate(-320,300) rotate(72 42 53)');
     if (tagWire) tagWire.setAttribute('opacity', onHandle ? '1' : '0');
   }
 
